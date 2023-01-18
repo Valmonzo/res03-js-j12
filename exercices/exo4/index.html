@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>vue js 4</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <header>
+        <h1>La TodoList de Valmont</h1>
+    </header>
+
+    <body>
+        <main>
+            <section id="app">
+                <h2>Liste des choses à faire</h2>
+                <ul id="ul">
+                    <template v-for="task of tasks" id="taskElem">
+                        <li v-if="task.done === false">
+                            {{ task.text }} <button @click ="doneTask(task)" name="tasked"><span class="fa-solid fa-check"></span></button>
+                        </li>
+                        <li v-else class="done">
+                            {{ task.text }} <button @click="doneTask(task)" name="tasked"><span class="fa-solid fa-check"></span></button>
+                        </li>
+                    </template>
+                </ul>
+                <form id="task" @submit.prevent="addTask">
+                    <input type="text" name="task" id="task" placeholder="Ecrivez votre tâche" />
+                    <button type="submit" id="add">Ajouter</button>
+                </form>
+
+            </section>
+        </main>
+        <script type="module" src="assets/js/index.js"></script>
+    </body>
+    <footer>
+        <p>La propriété de Valmonzo</p>
+    </footer>
+
+</html>

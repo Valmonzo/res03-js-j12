@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue js 2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <main>
+            <section id="app">
+                <h1 v-if="animal === 'Dog'">Dog</h1>
+                <h1 v-else>Cat</h1>
+                <button @click="changeAnimal">Ton animal spirituel</button>
+            </section>
+        </main>
+        <script type="module" src="assets/js/index.js"></script>
+    </body>
+
+</html>
